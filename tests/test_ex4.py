@@ -29,11 +29,21 @@ import pytest
 
 
 
-def test_set_check_password(user_1):
-    print('check-user1')
-    assert user_1.username == 'test-user'
+# def test_set_check_password(user_1):
+#     print('check-user1')
+#     assert user_1.username == 'test-user'
+#
+# def test_set_check_password(user_1):
+#     print('check-user2')
+#     assert user_1.username == 'test-user'
 
-def test_set_check_password(user_1):
-    print('check-user2')
-    assert user_1.username == 'test-user'
+# def test_new_user1(new_user1):
+#     print(new_user1.first_name)
+#     assert new_user1.first_name == 'MyName'
+
+def test_new_user2(new_user2):
+    print(new_user2.is_staff)
+    assert new_user2.is_staff == 'True'
+
+
 

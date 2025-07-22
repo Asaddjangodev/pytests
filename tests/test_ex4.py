@@ -1,12 +1,39 @@
 import pytest
 
-from django.contrib.auth.models import User
 
-@pytest.fixture()
-def user_1(db):
-    return User.objects.create_user("test-user")
+# @pytest.fixture()
+# def user_1(db):
+#     user = User.objects.create_user("test-user")
+#     return user
+#
+# @pytest.mark.django_db
+# def test_set_check_password(user_1):
+#     user_1.set_password("new-password")
+#     assert user_1.check_password("new-passwords") is True
 
-@pytest.mark.django_db
+
+# Фикстура user_1 будет вызываться заново для каждого теста (по умолчанию scope='function'),
+# @pytest.fixture()
+# def user_1(db): # Фикстура использует фикстуру db для доступа к БД
+#     user = User.objects.create_user("test-user")
+#     print('create-user')
+#     return user
+#
+# def test_set_check_password(user_1):
+#     print('check-user1')
+#     assert user_1.username == 'test-user'
+#
+# def test_set_check_password(user_1):
+#     print('check-user2')
+#     assert user_1.username == 'test-user'
+
+
+
 def test_set_check_password(user_1):
-    user_1.set_password("new-password")
-    assert user_1.check_password("new-passwords") is True
+    print('check-user1')
+    assert user_1.username == 'test-user'
+
+def test_set_check_password(user_1):
+    print('check-user2')
+    assert user_1.username == 'test-user'
+

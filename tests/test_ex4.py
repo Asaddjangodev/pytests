@@ -41,9 +41,21 @@ import pytest
 #     print(new_user1.first_name)
 #     assert new_user1.first_name == 'MyName'
 
-def test_new_user2(new_user2):
-    print(new_user2.is_staff)
-    assert new_user2.is_staff == 'True'
+# def test_new_user2(new_user2):
+#     print(new_user2.is_staff)
+#     assert new_user2.is_staff == 'True'
 
+from django.contrib.auth.models import User
 
+@pytest.mark.django_db
+def test_new_user(db,user_factory):
+    user = user_factory.build()
+    count = User.objects.count()
+    print(user.username)
+    print(count)
+    assert True
+
+def test_new_user(new_user1):
+    print(new_user1.username)
+    assert True
 
